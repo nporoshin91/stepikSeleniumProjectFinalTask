@@ -1,0 +1,17 @@
+*.py[cod]
+__pycache__
+
+.DS_Store
+.vscode
+/.idea/
+/allure-results/
+/lf_storage/
+/chromedriver
+/geckodriver
+
+chromedriver
+allure-results
+lf_storage
+/venv/
+/allure-report/
+/docker/
