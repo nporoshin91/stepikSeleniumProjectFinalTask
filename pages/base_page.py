@@ -18,4 +18,4 @@ class BasePage:
         return True
 
     def current_url(self):
-        self.browser.current_url()
+        return self.browser.current_url
