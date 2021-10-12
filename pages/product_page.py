@@ -11,7 +11,15 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Add to basket button is not presented"
 
     def should_be_success_messages(self):
-        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGES)
+        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Success message is not presented"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Success message is presented," \
+                                                                                   " but should not be"
+
+    def should_be_disappered_success_message(self):
+        assert self.is_disappeard(*ProductPageLocators.SUCCESS_MESSAGES), "Success message is presented," \
+                                                                          " but should not be"
 
     def get_goods_name(self):
         goods_name = self.browser.find_element(*ProductPageLocators.GOODS_NAME).text
