@@ -24,7 +24,7 @@ class ProductPage(BasePage):
     def get_success_messages(self):
         # находим одним махом три WebElement'а на странице, каждый из которых это "зелёное" сообщение на странице
         elements = self.browser.find_elements(*ProductPageLocators.SUCCESS_MESSAGES)
-        success_messages = []
-        for element in elements:
-            success_messages.append(element.text)  # достаём из каждого WebElement'а текст и добавляем его в список
+
+        # достаём из каждого WebElement'а текст и добавляем его в список
+        success_messages = [element.text for element in elements]
         return success_messages
