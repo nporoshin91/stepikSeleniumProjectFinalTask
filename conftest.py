@@ -13,6 +13,7 @@ def browser(request):
     browser_language = request.config.getoption("language")
     options = Options()
     options.add_argument("--window-position=0,0")
+    options.add_argument("--headless")
     options.add_experimental_option('prefs', {"intl.accept_languages": browser_language})
     if browser_language:
         print(f"\nusing browser language: {browser_language}")
